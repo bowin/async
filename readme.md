@@ -7,6 +7,7 @@ go get github.com/bowin/async
 ### Usage
 ```go
 package main
+import "time"
 import "github.com/bowin/async"
 func main()
 	f1 := func()interface{} {
@@ -20,7 +21,7 @@ func main()
 		time.Sleep(time.Millisecond * 10)
 		return "hell3"
 	}
-    r, _ := DoJobs(f1, f2, f3)
+    r, _ := async.DoJobs(f1, f2, f3)
     // r will be array like {"hell1", "hell2", "hell3"}
 }    
 ```
